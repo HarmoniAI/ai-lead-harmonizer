@@ -93,8 +93,8 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-2xl border border-gray-100 animate-fade-in">
-      <div className="text-center mb-8">
+    <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 animate-fade-in">
+      <div className="text-center mb-6">
         <h3 className="text-2xl font-bold text-gray-900 mb-2">
           Pronto para revolucionar sua prospecção?
         </h3>
@@ -103,8 +103,8 @@ const ContactForm = () => {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <form onSubmit={handleSubmit} className="space-y-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="space-y-2">
             <Label htmlFor="name">Nome *</Label>
             <Input
@@ -115,7 +115,7 @@ const ContactForm = () => {
               onChange={handleInputChange}
               placeholder="Seu nome completo"
               required
-              className="border-gray-300 focus:border-harmoni-blue"
+              className="border-gray-200 focus:border-harmoni-blue rounded-lg"
             />
           </div>
 
@@ -129,12 +129,12 @@ const ContactForm = () => {
               onChange={handleInputChange}
               placeholder="seu@email.com"
               required
-              className="border-gray-300 focus:border-harmoni-blue"
+              className="border-gray-200 focus:border-harmoni-blue rounded-lg"
             />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="space-y-2">
             <Label htmlFor="whatsapp">WhatsApp *</Label>
             <Input
@@ -145,7 +145,7 @@ const ContactForm = () => {
               onChange={handleInputChange}
               placeholder="(00) 90000-0000"
               required
-              className="border-gray-300 focus:border-harmoni-blue"
+              className="border-gray-200 focus:border-harmoni-blue rounded-lg"
             />
           </div>
 
@@ -159,7 +159,7 @@ const ContactForm = () => {
               onChange={handleInputChange}
               placeholder="Sua empresa"
               required
-              className="border-gray-300 focus:border-harmoni-blue"
+              className="border-gray-200 focus:border-harmoni-blue rounded-lg"
             />
           </div>
         </div>
@@ -167,10 +167,10 @@ const ContactForm = () => {
         <div className="space-y-2">
           <Label htmlFor="segment">Segmento que deseja prospectar *</Label>
           <Select onValueChange={handleSegmentChange} value={formData.segment}>
-            <SelectTrigger className="border-gray-300 focus:border-harmoni-blue">
+            <SelectTrigger className="border-gray-200 focus:border-harmoni-blue rounded-lg">
               <SelectValue placeholder="Selecione o segmento" />
             </SelectTrigger>
-            <SelectContent className="bg-white border border-gray-200">
+            <SelectContent className="bg-white">
               <SelectItem value="restaurantes">Restaurantes</SelectItem>
               <SelectItem value="clinicas">Clínicas Médicas</SelectItem>
               <SelectItem value="imobiliarias">Imobiliárias</SelectItem>
@@ -193,15 +193,15 @@ const ContactForm = () => {
             value={formData.expectations}
             onChange={handleInputChange}
             placeholder="Conte-nos sobre suas expectativas e desafios atuais na prospecção..."
-            rows={4}
-            className="border-gray-300 focus:border-harmoni-blue resize-none"
+            rows={3}
+            className="border-gray-200 focus:border-harmoni-blue rounded-lg resize-none"
           />
         </div>
 
         <Button
           type="submit"
           disabled={isLoading}
-          className="w-full bg-gradient-to-r from-harmoni-blue to-harmoni-blue-dark hover:from-harmoni-blue-dark hover:to-harmoni-blue text-white font-semibold py-4 text-lg rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+          className="w-full bg-harmoni-blue hover:bg-harmoni-blue-dark text-white font-semibold py-3 text-lg rounded-lg transition-all duration-300"
         >
           {isLoading ? (
             <>
