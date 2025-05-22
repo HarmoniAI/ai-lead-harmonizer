@@ -7,6 +7,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 
+const WEBHOOK_URL = 'https://n8norion.harmoniai.systems/webhook-test/f3c4a672-a5f4-4d14-bce2-79bb5289616b';
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -50,26 +52,34 @@ const ContactForm = () => {
     }
 
     try {
-      console.log('Enviando dados do formulário:', formData);
+      console.log('Enviando dados para o webhook:', formData);
       
-      // Here you would integrate with n8n webhook
-      // For now, we'll simulate the submission
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      toast({
-        title: "Sucesso!",
-        description: "Seus dados foram enviados com sucesso. Nossa equipe entrará em contato em breve!",
+      const response = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        whatsapp: '',
-        company: '',
-        segment: '',
-        expectations: ''
-      });
+
+      if (response.ok) {
+        toast({
+          title: "Sucesso!",
+          description: "Seus dados foram enviados com sucesso. Nossa equipe entrará em contato em breve!",
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          whatsapp: '',
+          company: '',
+          segment: '',
+          expectations: ''
+        });
+      } else {
+        throw new Error('Falha ao enviar dados para o webhook');
+      }
     } catch (error) {
       console.error('Erro ao enviar formulário:', error);
       toast({
