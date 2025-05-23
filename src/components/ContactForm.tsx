@@ -91,53 +91,68 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="space-y-6">
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <Label htmlFor="name" className="text-gray-700 mb-2 block">Nome</Label>
+    <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="space-y-2">
+          <Label htmlFor="name" className="text-gray-700 font-medium">Nome *</Label>
           <Input
             id="name"
             name="name"
             type="text"
             value={formData.name}
             onChange={handleInputChange}
-            placeholder=""
+            placeholder="Seu nome completo"
             required
-            className="border-gray-300 rounded-lg h-12 bg-white"
+            className="border-gray-200 focus:border-harmoni-blue rounded-lg h-12"
           />
         </div>
 
-        <div>
-          <Label htmlFor="email" className="text-gray-700 mb-2 block">E-mail</Label>
+        <div className="space-y-2">
+          <Label htmlFor="email" className="text-gray-700 font-medium">E-mail *</Label>
           <Input
             id="email"
             name="email"
             type="email"
             value={formData.email}
             onChange={handleInputChange}
-            placeholder=""
+            placeholder="seu@email.com"
             required
-            className="border-gray-300 rounded-lg h-12 bg-white"
+            className="border-gray-200 focus:border-harmoni-blue rounded-lg h-12"
           />
         </div>
 
-        <div>
-          <Label htmlFor="company" className="text-gray-700 mb-2 block">Nome da empresa</Label>
+        <div className="space-y-2">
+          <Label htmlFor="whatsapp" className="text-gray-700 font-medium">WhatsApp *</Label>
+          <Input
+            id="whatsapp"
+            name="whatsapp"
+            type="tel"
+            value={formData.whatsapp}
+            onChange={handleInputChange}
+            placeholder="(00) 90000-0000"
+            required
+            className="border-gray-200 focus:border-harmoni-blue rounded-lg h-12"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="company" className="text-gray-700 font-medium">Nome da empresa *</Label>
           <Input
             id="company"
             name="company"
             type="text"
             value={formData.company}
             onChange={handleInputChange}
-            placeholder=""
+            placeholder="Sua empresa"
             required
-            className="border-gray-300 rounded-lg h-12 bg-white"
+            className="border-gray-200 focus:border-harmoni-blue rounded-lg h-12"
           />
         </div>
 
-        <div>
+        <div className="space-y-2">
+          <Label htmlFor="segment" className="text-gray-700 font-medium">Segmento desejado para prospecção *</Label>
           <Select onValueChange={handleSegmentChange} value={formData.segment}>
-            <SelectTrigger className="border-gray-300 rounded-lg h-12 bg-white">
+            <SelectTrigger className="border-gray-200 focus:border-harmoni-blue rounded-lg h-12">
               <SelectValue placeholder="Segmento desejado para prospecção" />
             </SelectTrigger>
             <SelectContent className="bg-white">
@@ -155,15 +170,16 @@ const ContactForm = () => {
           </Select>
         </div>
 
-        <div>
+        <div className="space-y-2">
+          <Label htmlFor="expectations" className="text-gray-700 font-medium">O que você espera que uma empresa de automação com I.A. faça por você?</Label>
           <Textarea
             id="expectations"
             name="expectations"
             value={formData.expectations}
             onChange={handleInputChange}
-            placeholder="O que você espera que uma empresa de automação com I.A. faça por você?"
+            placeholder="Conte-nos sobre suas expectativas e desafios atuais na prospecção..."
             rows={4}
-            className="border-gray-300 rounded-lg resize-none bg-white"
+            className="border-gray-200 focus:border-harmoni-blue rounded-lg resize-none"
           />
         </div>
 
