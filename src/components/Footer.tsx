@@ -11,7 +11,7 @@ const Footer = () => {
             <Logo className="mx-auto" />
           </div>
           <p className="text-gray-400 mb-4">
-            © 2024 Harmoni I.A. - Todos os direitos reservados.
+            © 2024 Harmoni AI - Todos os direitos reservados.
           </p>
           <p className="text-gray-500 text-sm">
             Inteligência artificial para o seu sucesso comercial.

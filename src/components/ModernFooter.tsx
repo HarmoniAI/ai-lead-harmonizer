@@ -13,7 +13,7 @@ const ModernFooter = () => {
                 <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                   <div className="w-4 h-4 border-2 border-white rounded-sm"></div>
                 </div>
-                <span className="text-xl font-bold">Harmoni I.A.</span>
+                <span className="text-xl font-bold">Harmoni AI</span>
               </div>
               <p className="text-gray-400 max-w-sm">
                 Transformando a prospecção de leads com inteligência artificial avançada.
@@ -52,7 +52,7 @@ const ModernFooter = () => {
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center">
             <p className="text-gray-400">
-              © 2024 Harmoni I.A. Todos os direitos reservados.
+              © 2024 Harmoni AI. Todos os direitos reservados.
             </p>
           </div>
         </div>

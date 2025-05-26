@@ -9,6 +9,14 @@ import { useToast } from '@/hooks/use-toast';
 
 const WEBHOOK_URL = 'https://webhook.harmoniai.systems/webhook/f3c4a672-a5f4-4d14-bce2-79bb5289616b';
 
+interface FormErrors {
+  name?: string;
+  email?: string;
+  whatsapp?: string;
+  company?: string;
+  segment?: string;
+}
+
 const ModernContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -18,7 +26,7 @@ const ModernContactForm = () => {
     segment: '',
     expectations: ''
   });
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<FormErrors>({});
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
@@ -65,7 +73,7 @@ const ModernContactForm = () => {
     }
 
     // Clear errors on input
-    if (errors[name]) {
+    if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({
         ...prev,
         [name]: ''
@@ -88,7 +96,7 @@ const ModernContactForm = () => {
   };
 
   const validateForm = () => {
-    const newErrors = {};
+    const newErrors: FormErrors = {};
 
     if (!formData.name.trim()) {
       newErrors.name = 'Nome é obrigatório';

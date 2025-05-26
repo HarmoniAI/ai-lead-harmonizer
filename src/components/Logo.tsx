@@ -49,7 +49,7 @@ const Logo = ({ className = "" }: { className?: string }) => {
         </svg>
       </div>
       <div className="flex flex-col">
-        <h1 className="text-2xl font-bold text-harmoni-blue-dark">Harmoni I.A.</h1>
+        <h1 className="text-2xl font-bold text-harmoni-blue-dark">Harmoni AI</h1>
         <p className="text-sm text-harmoni-gray-dark">Inteligência Artificial</p>
       </div>
     </div>
