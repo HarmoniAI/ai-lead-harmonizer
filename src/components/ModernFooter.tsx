@@ -37,7 +37,8 @@ const ModernFooter = () => {
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Contato</h3>
               <div className="text-gray-400 space-y-2">
-                <p>contato@harmoniai.systems</p>
+                <p>harmoniaisystems@gmail.com</p>
+                <p>+55 11 96577-7824</p>
                 <div className="flex space-x-4">
                   <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
                     LinkedIn
